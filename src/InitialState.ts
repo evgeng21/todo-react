@@ -1,3 +1,10 @@
+export type InitialStateType = {
+    id: number,
+    title: string,
+    description: string,
+    done: boolean
+}
+
 export const InitialState = [
     {
         id: 1,

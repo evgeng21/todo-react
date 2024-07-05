@@ -1,6 +1,16 @@
 import React from 'react';
 
-const InputForm = ({formTitle, setFormTitle, formDescr, setFormDescr, handlerActionForm, btnTitle, todoId}) => {
+const InputForm = ({formTitle, setFormTitle, formDescr, setFormDescr, handlerActionForm, btnTitle, todoId}: 
+    {
+        formTitle: string,
+        setFormTitle: (text: string) => void,
+        formDescr: string,
+        setFormDescr: (text: string) => void,
+        handlerActionForm: (id: number) => void,
+        btnTitle: string,
+        todoId: number
+    }
+) => {
     return (
         <div className='input-form'>
             <label htmlFor="title">Заголовок:</label>

@@ -72,6 +72,7 @@
 }
 
 .todo__descr {
+  max-width: 1105px;
   padding: 30px;
 }
 
