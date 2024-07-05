@@ -1,9 +1,9 @@
 import './App.css';
-import TodoCard from "./components/TodoCard";
+import TodoCard from "./components/TodoCard.tsx";
 import {useState} from "react";
-import {InitialState} from "./InitialState";
-import InputForm from "./components/InputForm";
-import Modal from "./components/Modal";
+import {InitialState, InitialStateType} from "./InitialState.ts";
+import InputForm from "./components/InputForm.tsx";
+import Modal from "./components/Modal.tsx";
 
 
 
@@ -31,8 +31,9 @@ function App() {
                 id: Date.now(),
                 title: formTitle,
                 description: formDescr,
+                done: false
             }
-            setTodoList(prevState => [newElement, ...prevState])
+            setTodoList((prevState) => [newElement, ...prevState])
         } else {
             const changedList = todoList.map((todo) => {
                 // debugger
@@ -56,7 +57,7 @@ function App() {
         setFormDescr('')
     }
 
-    function handlerDone(buttonId) {
+    function handlerDone(buttonId: number) {
 
         const todoId = todoList.filter(todo => todo.id === buttonId)[0].id
         const changedList = todoList.map((todo) => {
@@ -73,11 +74,11 @@ function App() {
         setTodoList(changedList)
     }
 
-    function handlerDelete(buttonId) {
+    function handlerDelete(buttonId: number) {
         setTodoList(todoList.filter(el => el.id !== buttonId))
     }
 
-    function openChangeForm(todoId) {
+    function openChangeForm(todoId: number) {
         const todoElement = todoList.filter(todo => todo.id === todoId)[0]
         setFormTitle(todoElement.title)
         setFormDescr(todoElement.description)

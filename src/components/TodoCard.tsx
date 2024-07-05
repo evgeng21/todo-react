@@ -1,5 +1,13 @@
 
-export default function TodoCard({title, description, id, done, handlerDone, handlerDelete, setActive}) {
+export default function TodoCard({title, description, id, done, handlerDone, handlerDelete, setActive}: {
+    title: string,
+    description: string,
+    id: number,
+    done: boolean,
+    handlerDone: (id: number) => void,
+    handlerDelete: (id: number) => void,
+    setActive: (id: number) => void,
+}) {
     // debugger
     return (
         <>
